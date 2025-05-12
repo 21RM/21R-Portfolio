@@ -1,0 +1,145 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --space-black: #05060f;
+  --space-orange: #FF5D00;
+  --space-orange-light: #FF7D3F;
+  --space-orange-dark: #CC4A00;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 5rem;
+}
+
+body {
+  @apply bg-space-black text-white font-sans antialiased;
+  background: #05060f;
+  overflow-x: hidden;
+}
+
+.text-gradient {
+  background: linear-gradient(90deg, #FF5D00, #FF7D3F);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+}
+
+.btn {
+  @apply px-6 py-3 rounded-lg font-bold text-sm transition-all duration-300 ease-in-out;
+}
+
+.btn-primary {
+  @apply bg-space-orange text-white hover:bg-space-orange-light;
+}
+
+.btn-outline {
+  @apply border-2 border-space-orange text-space-orange hover:bg-space-orange hover:text-white;
+}
+
+.section-title {
+  @apply text-3xl md:text-4xl font-orbitron font-bold mb-10 relative;
+}
+
+.section-title::after {
+  content: '';
+  @apply block absolute w-20 h-1 bg-space-orange mt-2;
+}
+
+.nav-link {
+  @apply text-white opacity-70 hover:opacity-100 hover:text-space-orange transition-all duration-300;
+}
+
+.nav-link.active {
+  @apply text-space-orange opacity-100;
+}
+
+.card {
+  @apply bg-space-gray rounded-xl overflow-hidden transition-all duration-300;
+  box-shadow: 0 10px 30px -15px rgba(0, 0, 0, 0.6);
+}
+
+.card:hover {
+  box-shadow: 0 20px 40px -20px rgba(255, 93, 0, 0.3);
+  transform: translateY(-5px);
+}
+
+.progress-bar {
+  @apply h-2 rounded-full bg-space-orange;
+  transition: width 1s ease-in-out;
+}
+
+.star {
+  @apply absolute rounded-full bg-white;
+  animation: twinkle 5s infinite ease-in-out;
+}
+
+@keyframes twinkle {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+
+/* Animated background gradient */
+.space-bg {
+  background: linear-gradient(to bottom, #05060f, #0A0E17);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0A0E17;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #FF5D00;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #CC4A00;
+}
+
+/* Glowing text effect */
+.glow-text {
+  text-shadow: 0 0 10px rgba(255, 93, 0, 0.5);
+}
+
+/* Glowing border effect */
+.glow-border {
+  @apply border border-space-orange;
+  box-shadow: 0 0 10px rgba(255, 93, 0, 0.5);
+}
+
+/* Project card hover effect */
+.project-card {
+  @apply relative overflow-hidden rounded-xl;
+}
+
+.project-card::before {
+  content: '';
+  @apply absolute inset-0 bg-gradient-to-b from-transparent to-space-black opacity-0 transition-opacity duration-300;
+}
+
+.project-card:hover::before {
+  @apply opacity-100;
+}
+
+.project-card .content {
+  @apply absolute bottom-0 left-0 w-full p-6 transform translate-y-full transition-transform duration-300;
+}
+
+.project-card:hover .content {
+  @apply transform translate-y-0;
+}
