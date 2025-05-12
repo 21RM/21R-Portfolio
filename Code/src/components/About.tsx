@@ -28,7 +28,7 @@ const About: React.FC = () => {
               {/* Profile image with space-themed border effect */}
               <div className="absolute inset-0 rounded-lg overflow-hidden glow-border">
                 <img 
-                  src="https://images.pexels.com/photos/2379005/pexels-photo-2379005.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" 
+                  src="https://github.com/21RM/21R-Portfolio/raw/main/Images/Me.jpg" 
                   alt="Space-themed profile" 
                   className="w-full h-full object-cover"
                 />
